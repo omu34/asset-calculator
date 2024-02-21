@@ -12,7 +12,7 @@ class DealerController extends Controller
      */
     public function index()
     {
-        return view('dealers.dealer.index');
+        return view('dealers.index');
     }
 
     /**

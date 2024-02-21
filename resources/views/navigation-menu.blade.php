@@ -32,44 +32,48 @@
                     <x-nav-link :href="route('asset.index')" :active="request()->routeIs('asset.*')">
                         {{ __('Key In Asset Kind you want') }}
                     </x-nav-link>
-
                     <x-nav-link :href="route('showUploadForm')" :active="request()->routeIs('upload.*')">
                         {{ __('Upload Your KYC') }}
                     </x-nav-link>
+                   
                     @endif
 
 
 
                     @if (auth()->user()->role_id == 4)
-                    <x-nav-link :href="route('employers.profile.index')" :active="request()->routeIs('employers.profile.index')">
+                    <x-nav-link :href="URL::to('employers.profile.index')" :active="request()->routeIs('employers.profile.index')">
                         {{ __('Employers') }}
                     </x-nav-link>
-                    <x-nav-link :href="url::to('asset.index')" :active="request()->routeIs('asset.*')">
+                    <x-nav-link :href="URL::to('asset.index')" :active="request()->routeIs('asset.*')">
                         {{ __('Key In Asset Kind you want') }}
                     </x-nav-link>
-
-                    <x-nav-link :href="route('showUploadForm')" :active="request()->routeIs('upload.*')">
+                    <x-nav-link :href="URL::to('showUploadForm')" :active="request()->routeIs('upload.*')">
                         {{ __('Upload Your KYC') }}
+                    </x-nav-link>
+                    <x-nav-link :href="URL::to('index')" :active="request()->routeIs('index')">
+                        {{ __('Upload KYC1') }}
                     </x-nav-link>
                     @endif
 
 
 
                     @if (auth()->user()->role_id == 5)
-                    <x-nav-link :href="route('dealers.dealer.index')" :active="request()->routeIs('dealers.dealer.index')">
+                    <x-nav-link :href="URL::to('dealers.index')" :active="request()->routeIs('dealers.index')">
                         {{ __('Dealers') }}
                     </x-nav-link>
-                    <x-nav-link :href="url::to('asset.index')" :active="request()->routeIs('asset.*')">
-                        What Assets Do You Sell?
+                    <x-nav-link :href="URL::to('asset.index')" :active="request()->routeIs('asset.*')">
+                        {{ __('What Assets Do You Sell?') }}
                     </x-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 6)
-                    <x-nav-link :href="route('agents.agent.index')" :active="request()->routeIs('agents.agent.index')">
+
+                    <x-nav-link :href="URL::to('agents.index')" :active="request()->routeIs('agents.index')">
                         {{ __('Agents') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('asset.index')" :active="request()->routeIs('asset.*')">
-                        What Assets Do You Sell?
+
+                    <x-nav-link :href="URL::to('asset.index')" :active="request()->routeIs('asset.*')">
+                        {{ __('What Assets Do You Sell?') }}
                     </x-nav-link>
                     @endif
 
@@ -78,7 +82,6 @@
                     <x-nav-link :href="route('employee.clients.index')" :active="request()->routeIs('employee.clients.index')">
                         {{ __('Employees') }}
                     </x-nav-link>
-
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>

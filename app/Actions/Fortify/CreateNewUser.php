@@ -26,12 +26,11 @@ class CreateNewUser implements CreatesNewUsers
         if ($input['role_id'] == 3) {
             $validator->addRules([
                 'employee_job_id' => [
-                    'required',
-                    'string',
+                    'required','string',
                     function ($attribute, $value, $fail) {
                         $employeeJob = EmployeeJobView::where('employee_job_id', $value)->first();
                         if (!$employeeJob) {
-                            $fail('The selected job identity is not found.');
+                            $fail('You are not a COOP BANK employee.');
                         }
                     },
                     'unique:users,employee_job_id',
