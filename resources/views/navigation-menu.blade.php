@@ -29,13 +29,14 @@
                     <x-nav-link :href="route('business.businesses.index')" :active="request()->routeIs('business.businesses.index')">
                         {{ __('Business Class') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('asset.index')" :active="request()->routeIs('asset.*')">
+
+                    <x-nav-link href="{{ route('product.index') }}" :active="request()->routeIs('product.index')">
                         {{ __('Key In Asset Kind you want') }}
                     </x-nav-link>
                     <x-nav-link :href="route('showUploadForm')" :active="request()->routeIs('upload.*')">
                         {{ __('Upload Your KYC') }}
                     </x-nav-link>
-                   
+
                     @endif
 
 
@@ -44,7 +45,7 @@
                     <x-nav-link :href="URL::to('employers.profile.index')" :active="request()->routeIs('employers.profile.index')">
                         {{ __('Employers') }}
                     </x-nav-link>
-                    <x-nav-link :href="URL::to('asset.index')" :active="request()->routeIs('asset.*')">
+                    <x-nav-link :href="route('asset.index')" :active="request()->routeIs('asset.*')">
                         {{ __('Key In Asset Kind you want') }}
                     </x-nav-link>
                     <x-nav-link :href="URL::to('showUploadForm')" :active="request()->routeIs('upload.*')">

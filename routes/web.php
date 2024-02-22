@@ -10,11 +10,9 @@ use App\Http\Controllers\Asset\AssetController;
 use App\Http\Controllers\Dealers\DealerController;
 use App\Http\Controllers\Agents\AgentController;
 use App\Http\Controllers\Uploads\ImageUploadController;
-use App\Http\Controllers\Files\FileController;
+use App\Http\Controllers\Products\ProductController;
 
 
-use App\Models\Business;
-use App\Models\Dealer;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +75,31 @@ Route::post('calculate', [CalculatorController::class, 'calculate'])->name('calc
 Route::prefix('uploads')->group(function () {
     Route::get('upload/', [ImageUploadController::class, 'showUploadForm'])->name('showUploadForm');
     Route::post('/upload', [ImageUploadController::class, 'upload'])->name('upload');
+});
+
+
+
+
+
+Route::prefix('product')->group(function(){
+    Route::get('/', [ProductController::class, 'index'])->name('product.index');
+
+ // Add a new product
+    Route::get('/create', [ProductController::class, 'create'])->name('product.create');
+    // Store a new product
+    Route::post('/store', [ProductController::class, 'store'])->name('product.store');
+    // Edit a product
+    Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    // Update a product
+    Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    // Delete a product
+    Route::delete('/delete/{product_id}', [ProductController::class, 'delete'])->name('product.delete');
+    // Set active
+    Route::get('/set-active/{product_id}', [ProductController::class, 'setActive'])->name('product.setActive');
+    // Set inactive
+    Route::get('/set-inactive/{product_id}', [ProductController::class, 'setInactive'])->name('product.setInactive');
+    // View a product
+    Route::get('/view/{product_id}', [ProductController::class, 'view'])->name('product.view');
 });
 
 
