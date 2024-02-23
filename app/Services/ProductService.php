@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Services;
+
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductService {
+class ProductService
+{
     protected $product;
 
     public function __construct()
@@ -28,17 +30,21 @@ class ProductService {
     {
         $request->validate([
             'name' => 'required',
+            'location' => 'required',
+            'type' => 'required',
             'price' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $newImageName = time() . '-' . $request->name . '.' .
-        $request->image->extension();
+            $request->image->extension();
 
         $request->image->move(public_path('images'), $newImageName);
 
         $this->product->create([
             'name' => $request->name,
+            'location' => $request->location,
+            'type' => $request->type,
             'price' => $request->price,
             'image' => $newImageName,
         ]);
@@ -57,12 +63,14 @@ class ProductService {
         if ($request->hasFile('image')) {
             $request->validate([
                 'name' => 'required',
+                'location' => 'required',
+                'type' => 'required',
                 'price' => 'required',
                 'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             ]);
 
             $newImageName = time() . '-' . $request->name . '.' .
-            $request->image->extension();
+                $request->image->extension();
 
             $request->image->move(public_path('images'), $newImageName);
 
@@ -74,17 +82,23 @@ class ProductService {
 
             $this->product->find($id)->update([
                 'name' => $request->name,
+                'location' => $request->location,
+                'type' => $request->type,
                 'price' => $request->price,
                 'image' => $newImageName,
             ]);
         } else {
             $request->validate([
                 'name' => 'required',
+                'location' => 'required',
+                'type' => 'required',
                 'price' => 'required',
             ]);
 
             $this->product->find($id)->update([
                 'name' => $request->name,
+                'location' => $request->location,
+                'type' => $request->type,
                 'price' => $request->price,
             ]);
         }
@@ -102,14 +116,13 @@ class ProductService {
         }
 
         $product->delete();
-
     }
 
     // Set Active
     public function setActive($product_id)
     {
         $product = $this->product->find($product_id);
-        $product->status='active';
+        $product->status = 'active';
         $product->update();
     }
 
@@ -117,7 +130,7 @@ class ProductService {
     public function setInactive($product_id)
     {
         $product = $this->product->find($product_id);
-        $product->status='inactive';
+        $product->status = 'inactive';
         $product->update();
     }
 
@@ -127,5 +140,3 @@ class ProductService {
         return $this->product->find($product_id);
     }
 }
-
-?>

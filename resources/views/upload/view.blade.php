@@ -21,17 +21,8 @@
                                     Asset name : {{ $product->name }}
                                 </h2>
 
-                                <h2 class="text-lg leading-6 font-medium text-gray-900">
-                                    Asset Location : {{ $product->location }}
-                                </h2>
-                                <h2 class="text-lg leading-6 font-medium text-gray-900">
-                                    Asset Type : {{ $product->type }}
-                                </h2>
 
 
-                                <p class="mt-1 text-sm leading-5 text-gray-500">
-                                    Asset Price : LKR {{ $product->price }}
-                                </p>
 
                                 @if ($product->status == 'inactive')
                                     <p class="mt-1 text-sm leading-5 text-gray-500">
@@ -46,7 +37,7 @@
                                 {{-- Edit Button --}}
                                 <span class="inline-flex rounded-md shadow-sm mt-5">
                                     <a href="{{ route('product.edit', $product->id) }}"
-                                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:shadow-outline-indigo focus:border-green-700 active:bg-green-700 transition ease-in-out duration-150">
+                                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition ease-in-out duration-150">
                                         Edit
                                     </a>
                                 </span>

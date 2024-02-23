@@ -36,6 +36,9 @@
                     <x-nav-link :href="route('showUploadForm')" :active="request()->routeIs('upload.*')">
                         {{ __('Upload Your KYC') }}
                     </x-nav-link>
+                    {{--  <x-nav-link href="{{ route('kyc.index') }}" :active="request()->routeIs('kyc.index')">
+                        {{ __('Upload Your KYC1') }}
+                    </x-nav-link>  --}}
 
                     @endif
 

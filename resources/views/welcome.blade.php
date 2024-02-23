@@ -3,7 +3,7 @@
     <div class="max-w-screen    gap-6 overflow-hidden bg-gray-300">
 
         <div class="hidden md:block  lg:block justify-center  pt-6 pb-6 " style="background-color:#f7f3f8;">
-            <div class="flex md:gap-2 lg:gap-12 lg:max-w-screen-xl  md:max-w-screen-lg mx-auto ">
+            <div class="flex md:gap-2 lg:gap-12 max-w-screen-xl   mx-auto ">
                 <div class="flex ml-4 transition-transform transform hover:scale-105">
                     <a href="/" class="">
                         <img src="https://vehiclesales.co-opbank.co.ke/assetfinance/images/coop-asset-auction1.png" alt="" srcset="">
@@ -62,35 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="md:hidden lg:block">
-                        <button id="dropdownRadioHelperButton" data-dropdown-toggle="dropdownRadioHelper" class="menu-text  text-center inline-flex items-center" type="button">
-                            <a href="{{ url('/news-media') }}" class=""> News $ Media</a>
-                            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownRadioHelper" class="z-10 hidden bg-slate-100 divide-y divide-gray-100 rounded-lg shadow w-56">
-                            <ul class=" p-10 pb-10" aria-labelledby="dropdownRadioHelperButton">
 
-                                <li>
-                                    <a href="{{ url('events') }}" class="footer-p ">Events</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('gallery') }}" class="footer-p ">Gallery</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('news-articles') }}" class="footer-p ">News $ Articles</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('single-news-article') }}" class="footer-p ">Single News
-                                        Article
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
 
 
                     <div class="">
@@ -106,8 +78,31 @@
                             ticket
                         </a>
                     </div>
+
+
+                    <div class="">
+                        <a href="{{ url('help-support') }}" class="menu-text text-center inline-flex items-center"></a>
+
+                    </div>
+                    <div class="md:hidden lg:block">
+                        <a href="{{ 'get-in-touch' }}" class="menu-text  text-center inline-flex items-center"></a>
+
+                    </div>
+                    <div class="md:hidden lg:block">
+                        <a href="{{ 'submit-ticket' }}" class="menu-text text-center inline-flex items-center">
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{{ url('help-support') }}" class="menu-text text-center inline-flex items-center"></a>
+
+                    </div>
+                   
+
+
+
+
                 </div>
-                <div class="flex gap-2 justify-end ml-4 md:ml-4 lg:ml-8">
+                <div class="flex gap-2 justify-end ">
                     <div class="">
                         <a href="" class="">
                             <button type="button" class="bg-green-700 hover:bg-green-300 text-white text-bold rounded-xl px-10 py-2 text-center">
@@ -308,6 +303,7 @@
                 });
             });
         });
+
     </script>
 
 
